@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <display-name>EmployeeManagement</display-name>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+
+    <!-- Employee Login -->
+    <servlet>
+        <servlet-name>employee</servlet-name>
+        <servlet-class>employeemanagement.EmployeeLogin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>employee</servlet-name>
+        <url-pattern>/EmployeeLogin</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- Employee Registration -->
+    <servlet>
+        <servlet-name>employeereg</servlet-name>
+        <servlet-class>employeemanagement.EmployeeRegistering</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>employeereg</servlet-name>
+        <url-pattern>/RegisterEmployee</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- Admin Dashboard -->
+    <servlet>
+        <servlet-name>Admin</servlet-name>
+        <servlet-class>employeemanagement.Admin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Admin</servlet-name>
+        <url-pattern>/Admin</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- View All Employees -->
+    <servlet>
+        <servlet-name>adminview</servlet-name>
+        <servlet-class>employeemanagement.AdminViewEmployees</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>adminview</servlet-name>
+        <url-pattern>/AdminViewEmployees</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- Edit Employee -->
+    <servlet>
+        <servlet-name>edit</servlet-name>
+        <servlet-class>employeemanagement.EditEmployee</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>edit</servlet-name>
+        <url-pattern>/EditEmployee</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- Update Employee -->
+    <servlet>
+        <servlet-name>update</servlet-name>
+        <servlet-class>employeemanagement.UpdateEmployee</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>update</servlet-name>
+        <url-pattern>/UpdateEmployee</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- Delete Employee -->
+    <servlet>
+        <servlet-name>delete</servlet-name>
+        <servlet-class>employeemanagement.DeleteEmployee</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/DeleteEmployee</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- Global Error Page -->
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/error.html</location>
+    </error-page>
+
+</web-app>
